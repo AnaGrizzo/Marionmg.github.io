@@ -8,8 +8,45 @@
 .quadradinho-preenchido {
 	width: 3px; 
 	height: 3px; 
-    border: 1px solid #d2d2d2;
+    border: 1px solid #FFF;
     float: left;
     background-color: black;
+}
 
+.amarelo {
+    border-color: #f9ff56;
+    background-color: #f9ff56;
+}
+.verde {
+    border-color: #368e49;
+    background-color: #368e49;
+}
+  .otrolaranja {
+    border-color: #ff5416;
+    background-color: #ff5416;
+}
+
+  .rosa {
+    border-color: #ff7cfa;
+    background-color: #ff7cfa;
+}
+
+.verdinho {
+    border-color: #35b7ac;
+    background-color: #35b7ac;
+}
+
+  .azul {
+    border-color: #313abc;
+    background-color: #313abc;
+}
+
+.rosinha {
+    border-color: #ff99dd;
+    background-color: #ff99dd;
+}
+
+.laranja {
+    border-color: #f96d2c;
+    background-color: #f96d2c;
 }

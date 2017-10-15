@@ -5,17 +5,33 @@
 </head>
 <body>
 
-<!-- <div class="quadradinho-preenchido"></div> -->
+	<!-- <div class="quadradinho-preenchido rosa"></div>
+	<div class="quadradinho-preenchido rosinha"></div>
+	<div class="quadradinho-preenchido laranja"></div>
+	<div class="quadradinho-preenchido otrolaranja"></div> -->
+
+	<!-- <div class="quadradinho"></div> -->
+
     <div id="conteudo"></div>
 
 <script type="text/javascript">
 	console.log("Oi");
 	console.log("Atualizando");
 
+// ff99dd f96d2c 313abc f9ff56 368e49 ff5416 ff7cfa 35b7ac
+
 	var atualizar = function () {
 
 		var QUADRADO_VAZIO = '<div class="quadradinho"></div>';
 		var QUADRADO_PREENCHIDO = '<div class="quadradinho-preenchido"></div>';
+
+		var cores = [
+			'<div class="quadradinho-preenchido rosa"></div>',
+			'<div class="quadradinho-preenchido rosinha"></div>',
+			'<div class="quadradinho-preenchido laranja"></div>',
+			'<div class="quadradinho-preenchido otrolaranja"></div>'
+		]
+
 		// var TOTAL_DE_QUADRADOS = 113100;
 		var TIMESTAMP_INICIAL = new Date("2017-08-31T10:00:00-03:00");
 		var TIMESTAMP_FINAL = new Date("2017-11-17T23:00:00-02:00");
@@ -30,9 +46,22 @@
 		console.log('total = ' + TOTAL_DE_QUADRADOS)
 
 		var innerHTML = '';
+		var repeatNum = 0;
+		var cor;
 
 		for (var i = 0; i < QddnColors; i++) {
-			innerHTML = innerHTML + QUADRADO_PREENCHIDO;
+			if (repeatNum <= 0) {
+				repeatNum = Math.random() * 10;
+				cor = cores[Math.floor(Math.random() * 4)];
+			}
+
+			if (cor === undefined) {
+				innerHTML += QUADRADO_PREENCHIDO;
+			} else {
+				innerHTML += cor;
+			}
+
+			repeatNum--;			
 		}
 
 		for (var i = 0; i < QddnVazio; i++) {
@@ -43,7 +72,7 @@
 	};
 
 	atualizar();
-	setTimeout(atualizar, (1000 * 60));
+	// setTimeout(atualizar, (1000 * 60));
 </script>
 
 </body>
