@@ -5,20 +5,45 @@
 </head>
 <body>
 
+<!-- <div class="quadradinho-preenchido"></div> -->
     <div id="conteudo"></div>
 
 <script type="text/javascript">
 	console.log("Oi");
+	console.log("Atualizando");
 
-	var qddn = '<div class="quadradinho"></div>';
-	var totalQddn = 113100;
+	var atualizar = function () {
 
-	var innerHTML = '';
-	for (var i = 0; i < totalQddn; i++) {
-		innerHTML += qddn;
-	}
+		var QUADRADO_VAZIO = '<div class="quadradinho"></div>';
+		var QUADRADO_PREENCHIDO = '<div class="quadradinho-preenchido"></div>';
+		// var TOTAL_DE_QUADRADOS = 113100;
+		var TIMESTAMP_INICIAL = new Date("2017-08-31T10:00:00-03:00");
+		var TIMESTAMP_FINAL = new Date("2017-11-17T23:00:00-02:00");
+		var TOTAL_DE_QUADRADOS = (TIMESTAMP_FINAL - TIMESTAMP_INICIAL)  / 1000 / 60;
 
-	document.getElementById("conteudo").innerHTML = innerHTML;
+		var timestampAtual = new Date();
+		var QddnColors = (timestampAtual - TIMESTAMP_INICIAL) / 1000 / 60;
+		var QddnVazio = (TOTAL_DE_QUADRADOS - QddnColors)
+
+		console.log('vazio = ' + QddnVazio)
+		console.log('cheio = ' + QddnColors)
+		console.log('total = ' + TOTAL_DE_QUADRADOS)
+
+		var innerHTML = '';
+
+		for (var i = 0; i < QddnColors; i++) {
+			innerHTML = innerHTML + QUADRADO_PREENCHIDO;
+		}
+
+		for (var i = 0; i < QddnVazio; i++) {
+			innerHTML = innerHTML + QUADRADO_VAZIO;
+		}	
+
+		document.getElementById("conteudo").innerHTML = innerHTML;
+	};
+
+	atualizar();
+	setTimeout(atualizar, (1000 * 60));
 </script>
 
 </body>

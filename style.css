@@ -1,6 +1,15 @@
 .quadradinho {
-     width: 3px; 
-     height: 3px; 
+	width: 3px; 
+	height: 3px; 
     border: 1px solid #d2d2d2;
     float: left;
+}
+
+.quadradinho-preenchido {
+	width: 3px; 
+	height: 3px; 
+    border: 1px solid #d2d2d2;
+    float: left;
+    background-color: black;
+
 }
